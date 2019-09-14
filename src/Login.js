@@ -22,9 +22,6 @@ class Login extends Component {
             Login to Spotify
           </a>
         </button>
-
-        <h2>Your favourite albums:</h2>
-        <div id='albums'></div>
       </div>
     );
   }
