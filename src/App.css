@@ -1,33 +1,59 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css?family=Hepta+Slab|Raleway&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  font-family: 'Hepta Slab', serif;
+  padding: 3rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+button {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #fff;
+  font-size: 18px;
+  border: 1px solid transparent;
+  background-color: #1db954;
+  cursor: pointer;
+  border-radius: 500px;
+  padding: 16px 48px 18px;
+  margin-bottom: 1rem;
+  transition: 0.3s;
+}
+
+button a {
+  color: white;
+  text-decoration: none;
+}
+
+button:hover {
+  background-color: #1cc959;
+}
+
+header {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url('images/background-music.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+#header-content {
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#login-content {
   display: flex;
-  flex-direction: column;
+  flex-flow: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
