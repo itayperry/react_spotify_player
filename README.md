@@ -1,5 +1,15 @@
 ![Example](src/images/example.png)
 
+# react-spotify-player
+
+What does it do? For now, this project gives you 2 options (after login):
+A) You can find this app on your own Spotify app list of devices and stream music to it, using the Spotify's client-side JavaScript library Web Playback SDK.
+B) See a list of your favourite albums.
+
+## Running the Sample Code
+
+Before getting started you need to..
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
