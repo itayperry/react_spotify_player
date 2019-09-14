@@ -8,7 +8,7 @@ B) See a list of your favourite albums.
 
 ## Running the Sample Code
 
-Before getting started, you'll need to create a project in [Spotify's website](https://developer.spotify.com/dashboard/login).
+Before getting started, you'll need to create a project on [Spotify's website](https://developer.spotify.com/dashboard/login).
 You'll then receive a `clientId` and a `clientSecret`.
 
 Now, the server for this project is in [this reopsitory](https://github.com/giltayar/alt-spotify).
