@@ -2,7 +2,7 @@
 
 # react-spotify-player
 
-What does it do? For now, this project gives you 2 options (after login):\
+***What does it do?*** For now, this project gives you 2 options (after login):\
 A) You can find this app on your own Spotify app list of devices and stream music to it, using the Spotify's client-side JavaScript library: Web Playback SDK.\
 B) See a list of your favourite albums.
 
@@ -12,7 +12,7 @@ Before getting started, you'll need to create a project on [Spotify's website](h
 You'll then receive a `clientId` and a `clientSecret`.
 
 Now, the server for this project is in [this reopsitory](https://github.com/giltayar/alt-spotify).
-Follow the instructions, and don't forget to set environment variables as depicted in the text by the awesome [@giltayar](https://github.com/giltayar).\
+Follow the instructions, and don't forget to set environment variables as depicted in the text by the awesome [_@giltayar_](https://github.com/giltayar).\
 Here's an example for running the server on Git Bash (UNIX-like):
 
 ```sh
