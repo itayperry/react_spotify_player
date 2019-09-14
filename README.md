@@ -20,6 +20,13 @@ CLIENT_ID=something CLIENT_SECRET=something
 PORT=3001 BASE_URL=http://localhost:3001 npm run start:backend    
 ```
 
+**One last thing:**/
+Go to your Dashboard on Spotify's developers website, click on ***Edit Settings*** and choose a redirect URI.\
+Considering the example above you should write: 
+```sh
+http://localhost:3001/spotify-callback?redirect=http://localhost:3000/receive-token
+```
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
