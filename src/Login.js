@@ -38,7 +38,7 @@ class Login extends Component {
     window.onSpotifyWebPlaybackSDKReady = () => {
       const token = accessToken;
       const player = new window.Spotify.Player({
-        name: 'Web Playback SDK Quick Start Player',
+        name: 'Broadcast to React Spotify Player',
         getOAuthToken: cb => {
           cb(token);
         }

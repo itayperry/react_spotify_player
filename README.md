@@ -3,7 +3,7 @@
 # react-spotify-player
 
 ***What does it do?*** For now, this project gives you 2 options (after login):
-- You can find this app on your own Spotify app list of devices and stream music to it, using the Spotify's client-side JavaScript library: Web Playback SDK.
+- You can find this app on your own Spotify app list of **devices** and stream music to it, just look for _Broadcast to React Spotify Player_, this uses the Spotify's client-side JavaScript library: Web Playback SDK.
 - See a list of your favourite albums.
 
 ## Running the Sample Code
