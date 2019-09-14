@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import Album from './Album';
 
-class Login extends Component {
+class ReceiveToken extends Component {
   constructor(props) {
     super(props);
     this.checkForToken = this.checkForToken.bind(this);
-    this.state = { albumsInfo: [] };
   }
 
-  checkForToken() {
+  componentDidMount() {
     console.log('hello');
     const params = new URLSearchParams(window.location.search.substring(1));
     const accessToken = params.get('accessToken');
@@ -20,30 +19,6 @@ class Login extends Component {
     console.log('expiresIn: ' + expiresIn);
     console.log('userId: ' + userId);
     console.log('accessToken: ' + accessToken);
-
-    fetch('https://api.spotify.com/v1/me/albums', {
-      headers: {
-        Authorization: `Bearer ${accessToken}`
-      }
-    })
-      .then(function(albumsResponse) {
-        if (!albumsResponse.ok)
-          albumsResponse.text().then(function(text) {
-            throw new Error(`Spotify error: ${albumsResponse.status}: ${text}`);
-          });
-        return albumsResponse.json();
-      })
-      .then(albums => {
-        document.querySelector('#albums').innerHTML = `
-        <ul>
-          ${albums.items.map(({ album }) => `<li>${album.name}</li>`).join('')}
-        </ul>
-      `;
-        // this.setState({
-        //   //this works thanks to the arrow function
-        //   albumsInfo: albums.items
-        // });
-      });
 
     window.onSpotifyWebPlaybackSDKReady = () => {
       const token = accessToken;
@@ -89,26 +64,8 @@ class Login extends Component {
   }
 
   render() {
-    // const elements = this.state.albumsInfo.map(album => (
-    //   <Album name={album.name} />
-    // ));
-    return (
-      <div id='login-content'>
-        <button>
-          <a
-            onClick={this.checkForToken()}
-            href='http://localhost:3001/authorize?scope=user-read-private+user-library-read+streaming+user-read-email&redirect=http://localhost:3000/receive-token'
-          >
-            Login to Spotify
-          </a>
-        </button>
-        <h2>Your favourite albums:</h2>
-        <div id='albums'></div>
-        {/* <h2>Your favourite albums:</h2>
-        <div id='albums'>{elements}</div> */}
-      </div>
-    );
+    return <div>Waiting for a token..</div>;
   }
 }
 
-export default Login;
+export default ReceiveToken;
