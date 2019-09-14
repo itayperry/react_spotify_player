@@ -8,7 +8,17 @@ B) See a list of your favourite albums.
 
 ## Running the Sample Code
 
-Before getting started you need to..
+Before getting started you need to create a project in [Spotify's website](https://developer.spotify.com/dashboard/login).
+You'll then receive a `clientId` and `clientSecret`.
+
+Now, the server for this project is in [this reopsitory](https://github.com/giltayar/alt-spotify).
+Follow the instructions, and don't forget to set environment variables as depicted in the text by the awesome @giltayar.\
+Here's an example for running the server on Git Bash:
+
+```sh
+CLIENT_ID=something CLIENT_SECRET=something
+PORT=3001 BASE_URL=http://localhost:3001 npm run start:backend    
+```
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
