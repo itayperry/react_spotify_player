@@ -12,6 +12,8 @@ class Home extends Component {
   }
 
   componentDidMount() {
+    console.log(this.props.location);
+
     fetch('https://api.spotify.com/v1/me/albums', {
       headers: {
         Authorization: `Bearer ${this.state.accessToken}`
