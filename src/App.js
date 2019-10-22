@@ -1,12 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './App.css';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
-import ReceiveToken from './ReceiveToken';
-import Login from './Login';
-import Home from './Home';
-import { AccessTokenProvider } from './AccessTokenContext';
+import ReceiveToken from './components/ReceiveToken';
+import Login from './components/Login';
+import Home from './components/Home';
+import {
+  AccessTokenContext,
+  AccessTokenProvider
+} from './store/AccessTokenContext';
 
 function App() {
+  // const [contextToken] = useContext(AccessTokenContext);
+  // const redirectHandler = !contextToken ? (
+  //   <Redirect exact from='/' to='/login' />
+  // ) : (
+  //   <Redirect exact from='/' to='/home' />
+  // );
   return (
     <div className='App'>
       <header>
@@ -15,7 +24,9 @@ function App() {
           <AccessTokenProvider>
             <BrowserRouter>
               <Switch>
-                <Redirect exact from='/' to='/login' />
+                {/* {redirectHandler} */}
+                {/* <Redirect exact from='/' to='/login' />} */}
+                <Redirect exact from='/' to='/login' />}
                 <Route exact path='/login' component={Login} />
                 <Route exact path='/receive-token' component={ReceiveToken} />
                 <Route exact path='/home' component={Home} />

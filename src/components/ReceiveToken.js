@@ -1,20 +1,25 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { Redirect } from 'react-router-dom';
-import { AccessTokenContext } from './AccessTokenContext';
+import { AccessTokenContext } from '../store/AccessTokenContext';
+import { saveState, createStateObj } from '../store/localStorage';
 
 function ReceiveToken(props) {
   const [accessToken, setAccessToken] = useContext(AccessTokenContext);
+  // console.log(AccessTokenContext);
   const params = new URLSearchParams(props.location.search.substring(1));
 
-  const refreshTokenInterval = () => {
-    // setInterval()
-  };
+  // const refreshTokenInterval = () => {
+  //   // setInterval()
+  // };
 
   if (!params.get('accessToken')) {
     return <Redirect to='/login' />;
   } else {
-    const newContextExamination = params.get('accessToken');
-    setAccessToken(newContextExamination);
+    console.log(params.get('accessToken'));
+    // setAccessToken(createStateObj(params));
+    setAccessToken(params.get('accessToken'));
+
+    // saveState(createStateObj(params));
     return (
       <Redirect
         to={{

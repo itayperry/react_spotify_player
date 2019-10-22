@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import FavouriteAlbums from './FavouriteAlbums';
+import FavouriteSongs from './FavouriteSongs';
 import SDKPlayer from './SDKPlayer';
+import { Redirect } from 'react-router-dom';
+import { AccessTokenContext } from '../store/AccessTokenContext';
 
 class Home extends Component {
   constructor(props) {
@@ -11,12 +14,18 @@ class Home extends Component {
     };
   }
 
+  static contextType = AccessTokenContext;
+
   componentDidMount() {
-    console.log(this.props.location);
+    // console.log(this.context[0].accessToken);
+    console.log(
+      "You're at the home component - this is its context " + this.context[0]
+    );
 
     fetch('https://api.spotify.com/v1/me/albums', {
       headers: {
         Authorization: `Bearer ${this.state.accessToken}`
+        // Authorization: `Bearer ${this.context[0].accessToken}`
       }
     })
       .then(function(albumsResponse) {
@@ -31,19 +40,26 @@ class Home extends Component {
           //this works thanks to the arrow function
           albumsInfo: albums.items
         });
-        console.log(this.state.albumsInfo);
+        // console.log(this.state.albumsInfo);
       });
   }
 
   render() {
+    // if (this.context[0]) {
     return (
       <main>
         <div>You're home..</div>
         <FavouriteAlbums albums={this.state.albumsInfo} />
         <SDKPlayer accessToken={this.state.accessToken} />
+        <FavouriteSongs />
+        {/* <SDKPlayer accessToken={this.context[0].accessToken} /> */}
       </main>
     );
+    // } else {
+    // return <Redirect to='/login' />;
+    // }
   }
 }
 
+// Home.contextType = AccessTokenContext;
 export default Home;
