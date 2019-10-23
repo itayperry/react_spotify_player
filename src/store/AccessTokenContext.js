@@ -10,10 +10,8 @@ export const AccessTokenProvider = props => {
     window.localStorage.getItem('spotify-state')
   );
   useEffect(() => {
-    window.localStorage.setItem('spotify-state', accessToken);
-  }, [accessToken]);
-  useEffect(() => {
     if (!accessToken) return;
+    window.localStorage.setItem('spotify-state', accessToken);
     let timeoutHandle;
     timeoutHandle = setTimeout(async () => {
       const { accessToken, expiresIn } = await fetch(

@@ -29,7 +29,9 @@ function App() {
                 <Redirect exact from='/' to='/login' />}
                 <Route exact path='/login' component={Login} />
                 <Route exact path='/receive-token' component={ReceiveToken} />
-                <Route exact path='/home' component={Home} />
+                <Route exact path='/home'>
+                  <Home />
+                </Route>
               </Switch>
             </BrowserRouter>
           </AccessTokenProvider>

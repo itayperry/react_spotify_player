@@ -7,32 +7,29 @@ const FavouriteSongs = () => {
   const [accessToken] = useContext(AccessTokenContext);
 
   useEffect(() => {
-    fetch('https://api.spotify.com/v1/me/tracks', {
-      headers: {
-        Authorization: `Bearer ${accessToken}`
-        // Authorization: `Bearer ${this.context[0].accessToken}`
+    (async function() {
+      const songsResponse = await fetch(
+        'https://api.spotify.com/v1/me/tracks',
+        {
+          headers: {
+            Authorization: `Bearer ${accessToken}`
+            // Authorization: `Bearer ${this.context[0].accessToken}`
+          }
+        }
+      );
+      if (!songsResponse.ok) {
+        const text = await songsResponse.text();
+        throw new Error(`Spotify error: ${songsResponse.status}: ${text}`);
       }
-    })
-      .then(songsResponse => {
-        if (!songsResponse.ok)
-          songsResponse.text().then(function(text) {
-            throw new Error(`Spotify error: ${songsResponse.status}: ${text}`);
-          });
-        return songsResponse.json();
-      })
-      .then(songsList => {
-        // this.setState({
-        //this works thanks to the arrow function
-        //   albumsInfo: albums.items
-        setSongs(songsList.items);
-        console.log(songs);
-      });
+      const jsonResponse = await songsResponse.json();
+      setSongs(jsonResponse.items);
+    })();
   }, []);
-  //   const elements = songs.items.map((item, index) => <li>{item.track.name}</li>);
+
   return (
     <div>
       {songs.map((item, index) => (
-        <FavouriteSong item={item} />
+        <FavouriteSong key={index} item={item} />
       ))}
     </div>
   );
@@ -66,3 +63,21 @@ export default FavouriteSongs;
 // );
 // let data = await favouriteSongsResponse.json();
 // setData(data);
+
+// fetch('https://api.spotify.com/v1/me/tracks', {
+//   headers: {
+//     Authorization: `Bearer ${accessToken}`
+//     // Authorization: `Bearer ${this.context[0].accessToken}`
+//   }
+// })
+//   .then(songsResponse => {
+//     if (!songsResponse.ok)
+//       songsResponse.text().then(function(text) {
+//         throw new Error(`Spotify error: ${songsResponse.status}: ${text}`);
+//       });
+//     return songsResponse.json();
+//   })
+//   .then(songsList => {
+//     //this works thanks to the arrow function
+//     setSongs(songsList.items);
+//   });

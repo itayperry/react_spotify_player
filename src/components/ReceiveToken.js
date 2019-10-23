@@ -15,7 +15,7 @@ function ReceiveToken(props) {
   if (!params.get('accessToken')) {
     return <Redirect to='/login' />;
   } else {
-    console.log(params.get('accessToken'));
+    // console.log(params.get('accessToken'));
     // setAccessToken(createStateObj(params));
     setAccessToken(params.get('accessToken'));
 
@@ -23,8 +23,8 @@ function ReceiveToken(props) {
     return (
       <Redirect
         to={{
-          pathname: '/home',
-          state: { accessToken: params.get('accessToken') }
+          pathname: '/home'
+          // state: { accessToken: params.get('accessToken') }
         }}
       />
     );
