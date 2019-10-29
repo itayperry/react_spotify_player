@@ -1,6 +1,6 @@
 import React, { useState, createContext, useEffect } from 'react';
 
-export const AccessTokenContext = createContext();
+export const PlayerSourceContext = createContext();
 
 export const PlayerSourceProvider = props => {
   const [playerSource, setPlayerSource] = useState('');

@@ -1,12 +1,15 @@
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 
 function FavouriteAlbum(props) {
   console.log(props.album);
   return (
-    <div>
-      <li>{props.album.name}</li>
-      <img src={props.album.images[2].url} />
-    </div>
+    <li>
+      <Link to={`/home/album/${props.album.id}`}>
+        <p>{props.album.name}</p>
+        <img src={props.album.images[2].url} />
+      </Link>
+    </li>
   );
 }
 

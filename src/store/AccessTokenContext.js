@@ -4,7 +4,7 @@ import { loadState } from './localStorage';
 export const AccessTokenContext = createContext();
 
 export const AccessTokenProvider = props => {
-  console.log('context rendered');
+  // console.log('context rendered');
   // const spotifyState = loadState();
   const [accessToken, setAccessToken] = useState(
     window.localStorage.getItem('spotify-state')

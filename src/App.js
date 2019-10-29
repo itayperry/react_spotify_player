@@ -4,12 +4,11 @@ import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import ReceiveToken from './components/ReceiveToken';
 import Login from './components/Login';
 import Home from './components/Home';
-import {
-  AccessTokenContext,
-  AccessTokenProvider
-} from './store/AccessTokenContext';
+import { AccessTokenProvider } from './store/AccessTokenContext';
+import { PlayerSourceProvider } from './store/PlayerSourceContext';
 import FavouriteAlbums from './components/FavouriteAlbums';
 import FavouriteSongs from './components/FavouriteSongs';
+import ShowAlbum from './components/ShowAlbum';
 
 function App() {
   // const [contextToken] = useContext(AccessTokenContext);
@@ -31,17 +30,24 @@ function App() {
                 <Redirect exact from='/' to='/login' />}
                 <Route exact path='/login' component={Login} />
                 <Route exact path='/receive-token' component={ReceiveToken} />
-                <Route exact path='/home' component={Home} />
-                <Route
-                  exact
-                  path='/home/favourite-albums'
-                  component={FavouriteAlbums}
-                />
-                <Route
-                  exact
-                  path='/home/favourite-songs'
-                  component={FavouriteSongs}
-                />
+                <PlayerSourceProvider>
+                  <Route exact path='/home' component={Home} />
+                  <Route
+                    exact
+                    path='/home/favourite-albums'
+                    component={FavouriteAlbums}
+                  />
+                  <Route
+                    exact
+                    path='/home/favourite-songs'
+                    component={FavouriteSongs}
+                  />
+                  <Route
+                    exact
+                    path='/home/album/:albumId'
+                    component={ShowAlbum}
+                  />
+                </PlayerSourceProvider>
               </Switch>
             </BrowserRouter>
           </AccessTokenProvider>
