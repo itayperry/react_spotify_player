@@ -8,6 +8,8 @@ import {
   AccessTokenContext,
   AccessTokenProvider
 } from './store/AccessTokenContext';
+import FavouriteAlbums from './components/FavouriteAlbums';
+import FavouriteSongs from './components/FavouriteSongs';
 
 function App() {
   // const [contextToken] = useContext(AccessTokenContext);
@@ -29,9 +31,17 @@ function App() {
                 <Redirect exact from='/' to='/login' />}
                 <Route exact path='/login' component={Login} />
                 <Route exact path='/receive-token' component={ReceiveToken} />
-                <Route exact path='/home'>
-                  <Home />
-                </Route>
+                <Route exact path='/home' component={Home} />
+                <Route
+                  exact
+                  path='/home/favourite-albums'
+                  component={FavouriteAlbums}
+                />
+                <Route
+                  exact
+                  path='/home/favourite-songs'
+                  component={FavouriteSongs}
+                />
               </Switch>
             </BrowserRouter>
           </AccessTokenProvider>

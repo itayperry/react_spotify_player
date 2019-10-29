@@ -8,10 +8,6 @@ function ReceiveToken(props) {
   // console.log(AccessTokenContext);
   const params = new URLSearchParams(props.location.search.substring(1));
 
-  // const refreshTokenInterval = () => {
-  //   // setInterval()
-  // };
-
   if (!params.get('accessToken')) {
     return <Redirect to='/login' />;
   } else {
