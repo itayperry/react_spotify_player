@@ -2,9 +2,11 @@
 
 # react-spotify-player
 
-***What does it do?*** For now, this project gives you 2 options (after login):
+**_What does it do?_** For now, this project gives you 2 options (after login):
+
 - You can find this app on your own Spotify app list of **devices** and stream music to it, just look for _Broadcast to React Spotify Player_, this uses the Spotify's client-side JavaScript library: Web Playback SDK.
 - See a list of your favourite albums.
+- Play 30 seconds samples of each song from your 'favourite songs list' or your 'favourite album list' (currently limited to 15).
 
 ## Running the Sample Code
 
@@ -17,13 +19,14 @@ Here's an example for running the server on Git Bash (UNIX-like):
 
 ```sh
 CLIENT_ID=something CLIENT_SECRET=something
-PORT=3001 BASE_URL=http://localhost:3001 npm run start:backend    
+PORT=3001 BASE_URL=http://localhost:3001 npm run start:backend
 ```
 
 **One last thing:**
 
-Go to your [Dashboard](https://developer.spotify.com/dashboard/applications) on Spotify's developers website, click on the app and then on ***Edit Settings***, choose a redirect URI.\
-Considering the example above you should write: 
+Go to your [Dashboard](https://developer.spotify.com/dashboard/applications) on Spotify's developers website, click on the app and then on **_Edit Settings_**, choose a redirect URI.\
+Considering the example above you should write:
+
 ```sh
 http://localhost:3001/spotify-callback?redirect=http://localhost:3000/receive-token
 ```
