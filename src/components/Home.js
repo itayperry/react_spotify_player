@@ -1,15 +1,43 @@
 import React, { useState } from 'react';
 import SDKPlayer from './SDKPlayer';
-import { Link } from 'react-router-dom';
+import {
+  Link,
+  BrowserRouter,
+  Switch,
+  Route,
+  useRouteMatch
+} from 'react-router-dom';
+import Player from './Player';
+import FavouriteAlbums from './FavouriteAlbums';
+import FavouriteSongs from './FavouriteSongs';
+import ShowAlbum from './ShowAlbum';
 
 function Home() {
-  const [sondId, setSongId] = useState('');
+  // const [sondId, setSongId] = useState('');
+  let { path, url } = useRouteMatch();
+  let { match } = useRouteMatch();
+  console.log(match, path, url);
 
   return (
     <main>
       <div>You're home..</div>
-      <Link to={`/home/favourite-songs`}>Go to songs</Link>
-      <Link to={`/home/favourite-albums`}>Go to albums</Link>
+      {/* <BrowserRouter> */}
+      <Link to={`/home/favourite-songs`}>
+        <button>Go to songs</button>
+      </Link>
+      <Link to='/home/favourite-albums'>
+        <button>Go to albums</button>
+      </Link>
+
+      <Switch>
+        <Route path='/home/favourite-albums' component={FavouriteAlbums} />
+        <Route path='/home/favourite-songs' component={FavouriteSongs} />
+        <Route path='/home/album/:albumId' component={ShowAlbum} />
+      </Switch>
+
+      {/* </BrowserRouter> */}
+
+      <Player />
 
       {/* <SDKPlayer accessToken={this.state.accessToken} /> */}
 

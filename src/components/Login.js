@@ -2,10 +2,9 @@ import React from 'react';
 
 export default () => (
   <div id='login-content'>
-    <button>
-      <a href='http://localhost:3001/authorize?scope=user-read-private+user-library-read+user-library-modify+streaming+user-read-email&redirect=http://localhost:3000/receive-token'>
-        Login to Spotify
-      </a>
-    </button>
+    <h1>Welcome to React Spotify Player</h1>
+    <a href='http://localhost:3001/authorize?scope=user-read-private+user-library-read+user-library-modify+streaming+user-read-email&redirect=http://localhost:3000/receive-token'>
+      <button>Login to Spotify</button>
+    </a>
   </div>
 );

@@ -11,17 +11,10 @@ import FavouriteSongs from './components/FavouriteSongs';
 import ShowAlbum from './components/ShowAlbum';
 
 function App() {
-  // const [contextToken] = useContext(AccessTokenContext);
-  // const redirectHandler = !contextToken ? (
-  //   <Redirect exact from='/' to='/login' />
-  // ) : (
-  //   <Redirect exact from='/' to='/home' />
-  // );
   return (
     <div className='App'>
       <header>
         <div id='header-content'>
-          <h1>Welcome to React Spotify Player</h1>
           <AccessTokenProvider>
             <BrowserRouter>
               <Switch>
@@ -31,22 +24,7 @@ function App() {
                 <Route exact path='/login' component={Login} />
                 <Route exact path='/receive-token' component={ReceiveToken} />
                 <PlayerSourceProvider>
-                  <Route exact path='/home' component={Home} />
-                  <Route
-                    exact
-                    path='/home/favourite-albums'
-                    component={FavouriteAlbums}
-                  />
-                  <Route
-                    exact
-                    path='/home/favourite-songs'
-                    component={FavouriteSongs}
-                  />
-                  <Route
-                    exact
-                    path='/home/album/:albumId'
-                    component={ShowAlbum}
-                  />
+                  <Route path='/home' component={Home} />
                 </PlayerSourceProvider>
               </Switch>
             </BrowserRouter>
@@ -58,3 +36,10 @@ function App() {
 }
 
 export default App;
+
+// const [contextToken] = useContext(AccessTokenContext);
+// const redirectHandler = !contextToken ? (
+//   <Redirect exact from='/' to='/login' />
+// ) : (
+//   <Redirect exact from='/' to='/home' />
+// );

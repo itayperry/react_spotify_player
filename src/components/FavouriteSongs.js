@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { AccessTokenContext } from '../store/AccessTokenContext';
 import FavouriteSong from './FavouriteSong';
+import Player from './Player';
 
 const FavouriteSongs = () => {
   const [songs, setSongs] = useState([]);
@@ -28,9 +29,12 @@ const FavouriteSongs = () => {
 
   return (
     <div>
-      {songs.map((item, index) => (
-        <FavouriteSong key={index} item={item} />
-      ))}
+      {/* <Player /> */}
+      <div>
+        {songs.map((item, index) => (
+          <FavouriteSong key={index} item={item} />
+        ))}
+      </div>
     </div>
   );
 };
