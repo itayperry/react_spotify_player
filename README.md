@@ -5,8 +5,10 @@
 **_What does it do?_** For now, this project gives you 2 options (after login):
 
 - You can find this app on your own Spotify app list of **devices** and stream music to it, just look for _Broadcast to React Spotify Player_, this uses the Spotify's client-side JavaScript library: Web Playback SDK.
-- See a list of your favourite albums.
-- Play 30 seconds samples of each song from your 'favourite songs list' or your 'favourite album list' (currently limited to 15).
+- See a list of your favourite albums/songs.
+- Play 30 seconds samples of each song from your 'favourite songs list' or your 'favourite albums list'.
+
+**( Playlists length currently limited to 15)**
 
 ## Running the Sample Code
 
