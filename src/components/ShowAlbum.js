@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { AccessTokenContext } from '../store/AccessTokenContext';
+import GeneralSongsList from './GeneralSongsList';
 
 const ShowAlbum = () => {
   let { albumId } = useParams();
@@ -25,6 +26,7 @@ const ShowAlbum = () => {
       const jsonResponse = await albumResponse.json();
       setAlbum(jsonResponse);
       // setImageUrl(jsonResponse.images[2].url);
+      console.log(jsonResponse.tracks.items);
     })();
   }, []);
 
@@ -32,6 +34,7 @@ const ShowAlbum = () => {
     <div>
       <h2 id='albums'>{album.name}</h2>
       {album.images && <img src={album.images[2].url} />}
+      {album.tracks && <GeneralSongsList songs={album.tracks.items} />}
     </div>
   );
 };

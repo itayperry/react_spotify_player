@@ -1,32 +1,20 @@
 import React, { useState } from 'react';
-import SDKPlayer from './SDKPlayer';
-import {
-  Link,
-  BrowserRouter,
-  Switch,
-  Route,
-  useRouteMatch
-} from 'react-router-dom';
+// import SDKPlayer from './SDKPlayer';
+import { Link, Switch, Route } from 'react-router-dom';
 import Player from './Player';
 import FavouriteAlbums from './FavouriteAlbums';
 import FavouriteSongs from './FavouriteSongs';
 import ShowAlbum from './ShowAlbum';
 
 function Home() {
-  // const [sondId, setSongId] = useState('');
-  let { path, url } = useRouteMatch();
-  let { match } = useRouteMatch();
-  console.log(match, path, url);
-
   return (
     <main>
-      <div>You're home..</div>
-      {/* <BrowserRouter> */}
+      <h2>You're home..</h2>
       <Link to={`/home/favourite-songs`}>
-        <button>Go to songs</button>
+        <button>Your Favourite Songs</button>
       </Link>
       <Link to='/home/favourite-albums'>
-        <button>Go to albums</button>
+        <button>Your Favourite Albums</button>
       </Link>
 
       <Switch>
@@ -34,8 +22,6 @@ function Home() {
         <Route path='/home/favourite-songs' component={FavouriteSongs} />
         <Route path='/home/album/:albumId' component={ShowAlbum} />
       </Switch>
-
-      {/* </BrowserRouter> */}
 
       <Player />
 

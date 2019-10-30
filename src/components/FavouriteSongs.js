@@ -1,7 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { AccessTokenContext } from '../store/AccessTokenContext';
 import FavouriteSong from './FavouriteSong';
-import Player from './Player';
 
 const FavouriteSongs = () => {
   const [songs, setSongs] = useState([]);
@@ -10,7 +9,7 @@ const FavouriteSongs = () => {
   useEffect(() => {
     (async function() {
       const songsResponse = await fetch(
-        'https://api.spotify.com/v1/me/tracks',
+        'https://api.spotify.com/v1/me/tracks?limit=15',
         {
           headers: {
             Authorization: `Bearer ${accessToken}`
@@ -24,21 +23,34 @@ const FavouriteSongs = () => {
       }
       const jsonResponse = await songsResponse.json();
       setSongs(jsonResponse.items);
+      console.log(jsonResponse.items);
     })();
   }, []);
 
   return (
     <div>
-      {/* <Player /> */}
-      <div>
-        {songs.map((item, index) => (
-          <FavouriteSong key={index} item={item} />
-        ))}
-      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Album</th>
+            <th>Artist</th>
+            <th>Length</th>
+          </tr>
+        </thead>
+        <tbody>
+          {songs.map((item, index) => (
+            <FavouriteSong key={index} item={item} />
+          ))}
+        </tbody>
+        <tfoot>
+          <tr>{/* <td>Sum</td>
+                <td>$180</td> */}</tr>
+        </tfoot>
+      </table>
     </div>
   );
 };
-
 export default FavouriteSongs;
 
 //   .then(function(albumsResponse) {
