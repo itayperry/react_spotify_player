@@ -8,7 +8,7 @@
 - See a list of your favourite albums/songs.
 - Play 30 seconds samples of each song from your 'favourite songs list' or your 'favourite albums list'.
 
-**( Playlists length currently limited to 15)**
+**(Playlists length currently limited to 15)**
 
 ## Running the Sample Code
 
