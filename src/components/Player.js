@@ -19,26 +19,20 @@ const Player = () => {
     if (promise !== undefined) {
       promise
         .then(_ => {
-          // Autoplay started!
+          // Play initiated!
         })
         .catch(error => {
-          // Autoplay was prevented.
+          // Play was prevented.
           // Show a "Play" button so that user can start playback.
         });
     }
-
-    //   return () => {
-    //       cleanup
-    //   };
   }, [playerSource]);
   return (
     <div>
       <h3>Player Component</h3>
       <p>{playerSource}</p>
       <audio controls ref={audioTagRef}>
-        <source src={`${playerSource}`} type='audio/ogg' />
         <source src={`${playerSource}`} type='audio/mpeg' />
-        Your browser does not support the audio element.
       </audio>
     </div>
   );

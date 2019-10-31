@@ -2,8 +2,8 @@ import React from 'react';
 // import SDKPlayer from './SDKPlayer';
 import { Link, Switch, Route } from 'react-router-dom';
 import Player from './Player';
-import FavouriteAlbums from './FavouriteAlbums';
-import FavouriteSongs from './FavouriteSongs';
+import FavouriteAlbums from './users-favourites/FavouriteAlbums';
+import FavouriteSongs from './users-favourites/FavouriteSongs';
 import ShowAlbum from './ShowAlbum';
 
 function Home() {

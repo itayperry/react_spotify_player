@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react';
 import Album from './FavouriteAlbum';
-import { AccessTokenContext } from '../store/AccessTokenContext';
+import { AccessTokenContext } from '../../store/AccessTokenContext';
 
 function FavouriteAlbums(props) {
   const [albums, setAlbums] = useState([]);
@@ -23,11 +23,12 @@ function FavouriteAlbums(props) {
       }
       const jsonResponse = await albumsResponse.json();
       setAlbums(jsonResponse.items);
+      console.log(jsonResponse.items);
     })();
   }, [accessToken]);
 
   const elements = albums.map((albumInfo, index) => (
-    <Album album={albumInfo.album} key={index} />
+    <Album album={albumInfo.album} added={albumInfo.added_at} key={index} />
   ));
 
   return (
@@ -39,21 +40,3 @@ function FavouriteAlbums(props) {
 }
 
 export default FavouriteAlbums;
-
-// fetch('https://api.spotify.com/v1/me/albums', {
-//   headers: {
-//     Authorization: `Bearer ${accessToken}`
-//     // Authorization: `Bearer ${this.context[0].accessToken}`
-//   }
-// })
-//   .then(function(albumsResponse) {
-//     if (!albumsResponse.ok)
-//       return albumsResponse.text().then(function(text) {
-//         throw new Error(`Spotify error: ${albumsResponse.status}: ${text}`);
-//       });
-//     return albumsResponse.json();
-//   })
-//   .then(albums => {
-//     setAlbums(albums.items);
-//     // console.log(this.state.albumsInfo);
-//   });

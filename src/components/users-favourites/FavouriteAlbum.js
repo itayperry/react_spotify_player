@@ -7,6 +7,9 @@ function FavouriteAlbum(props) {
     <li>
       <Link to={`/home/album/${props.album.id}`}>
         <p>{props.album.name}</p>
+        <p>
+          <strong>added at: </strong> {props.added.substring(0, 10)}
+        </p>
         <img src={props.album.images[2].url} alt='Album Cover' />
       </Link>
     </li>
