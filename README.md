@@ -2,7 +2,7 @@
 
 # react-spotify-player
 
-**_What does it do?_** For now, this project gives you a few options (after login as a _*premium*_ user):
+**_What does it do?_** For now, this project gives you a few options (after logging as a **premium** user):
 
 - See a list of your favourite albums/songs.
 - Play 30 seconds samples of each song from your 'favourite songs list' or your 'favourite albums list'.
