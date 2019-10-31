@@ -1,4 +1,4 @@
-![Example](src/images/example.png)
+![screenshot1](src/images/example.png)
 
 # react-spotify-player
 
@@ -32,6 +32,10 @@ Considering the example above you should write:
 ```sh
 http://localhost:3001/spotify-callback?redirect=http://localhost:3000/receive-token
 ```
+
+![screenshot2](src/images/screenshot-spotify.png)
+
+![screenshot3](src/images/screenshot-spotify3.png)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
