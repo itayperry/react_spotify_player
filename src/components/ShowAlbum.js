@@ -26,15 +26,22 @@ const ShowAlbum = () => {
       const jsonResponse = await albumResponse.json();
       setAlbum(jsonResponse);
       // setImageUrl(jsonResponse.images[2].url);
-      console.log(jsonResponse.tracks.items);
     })();
-  }, []);
+  }, [albumId, accessToken]);
 
   return (
     <div>
       <h2 id='albums'>{album.name}</h2>
-      {album.images && <img src={album.images[2].url} />}
-      {album.tracks && <GeneralSongsList songs={album.tracks.items} />}
+      {album.images && album.tracks && album.artists[0] ? (
+        <div>
+          <h3>{album.artists[0].name}</h3>
+          <h3>{album.release_date.substring(0, 4)}</h3>
+          <img src={album.images[2].url} alt='Album Cover' />
+          <GeneralSongsList songs={album.tracks.items} />
+        </div>
+      ) : (
+        <p>Loading</p>
+      )}
     </div>
   );
 };

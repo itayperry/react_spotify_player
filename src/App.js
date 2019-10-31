@@ -1,14 +1,11 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import './App.css';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
-import ReceiveToken from './components/ReceiveToken';
-import Login from './components/Login';
+import ReceiveToken from './components/auth/ReceiveToken';
+import Login from './components/auth/Login';
 import Home from './components/Home';
 import { AccessTokenProvider } from './store/AccessTokenContext';
 import { PlayerSourceProvider } from './store/PlayerSourceContext';
-import FavouriteAlbums from './components/FavouriteAlbums';
-import FavouriteSongs from './components/FavouriteSongs';
-import ShowAlbum from './components/ShowAlbum';
 
 function App() {
   return (

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 // import SDKPlayer from './SDKPlayer';
 import { Link, Switch, Route } from 'react-router-dom';
 import Player from './Player';

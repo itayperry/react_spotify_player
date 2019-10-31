@@ -24,7 +24,7 @@ function FavouriteAlbums(props) {
       const jsonResponse = await albumsResponse.json();
       setAlbums(jsonResponse.items);
     })();
-  }, []);
+  }, [accessToken]);
 
   const elements = albums.map((albumInfo, index) => (
     <Album album={albumInfo.album} key={index} />

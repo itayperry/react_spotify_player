@@ -2,7 +2,8 @@ import React, { useContext } from 'react';
 import { PlayerSourceContext } from '../store/PlayerSourceContext';
 
 const GeneralSongItem = props => {
-  const [playerSource, setPlayerSource] = useContext(PlayerSourceContext);
+  const setPlayerSource = useContext(PlayerSourceContext)[1];
+  // const [playerSource, setPlayerSource] = useContext(PlayerSourceContext); will provide an unnecessary variable
   const updateMusicSrc = () => {
     setPlayerSource(props.item.preview_url);
   };

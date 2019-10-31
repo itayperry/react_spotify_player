@@ -25,7 +25,7 @@ const FavouriteSongs = () => {
       setSongs(jsonResponse.items);
       console.log(jsonResponse.items);
     })();
-  }, []);
+  }, [accessToken]);
 
   return (
     <div>

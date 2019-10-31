@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Redirect } from 'react-router-dom';
-import { AccessTokenContext } from '../store/AccessTokenContext';
-import { saveState, createStateObj } from '../store/localStorage';
+import { AccessTokenContext } from '../../store/AccessTokenContext';
+// import { saveState, createStateObj } from '../store/localStorage';
 
 function ReceiveToken(props) {
   const [accessToken, setAccessToken] = useContext(AccessTokenContext);

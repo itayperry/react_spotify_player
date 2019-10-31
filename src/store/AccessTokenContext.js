@@ -1,5 +1,5 @@
 import React, { useState, createContext, useEffect } from 'react';
-import { loadState } from './localStorage';
+// import { loadState } from './localStorage';
 
 export const AccessTokenContext = createContext();
 
@@ -14,13 +14,15 @@ export const AccessTokenProvider = props => {
     window.localStorage.setItem('spotify-state', accessToken);
     let timeoutHandle;
     timeoutHandle = setTimeout(async () => {
-      const { accessToken, expiresIn } = await fetch(
+      const response = await fetch(
         `http://localhost:3001/refresh?accessToken=${accessToken}`,
         {
           method: 'POST'
         }
       );
-      setAccessToken(accessToken);
+      const result = await response.json(); // writing {accesToken, expiresIn} wouldn't work
+      setAccessToken(result.accessToken);
+      console.log(result.accessToken);
     }, 3600 * 1000);
     return () => {
       clearTimeout(timeoutHandle);
