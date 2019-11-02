@@ -1,34 +1,34 @@
 import React from 'react';
 // import SDKPlayer from './SDKPlayer';
-import { Link, Switch, Route } from 'react-router-dom';
-import Player from './Player';
+import { Switch, Route } from 'react-router-dom';
 import FavouriteAlbums from './users-favourites/FavouriteAlbums';
 import FavouriteSongs from './users-favourites/FavouriteSongs';
 import ShowAlbum from './ShowAlbum';
+import NavMenu from './NavMenu';
+import Player from './Player';
 
 function Home() {
   return (
-    <main>
-      <h2>You're home..</h2>
-      <Link to={`/home/favourite-songs`}>
-        <button>Your Favourite Songs</button>
-      </Link>
-      <Link to='/home/favourite-albums'>
-        <button>Your Favourite Albums</button>
-      </Link>
-
-      <Switch>
-        <Route path='/home/favourite-albums' component={FavouriteAlbums} />
-        <Route path='/home/favourite-songs' component={FavouriteSongs} />
-        <Route path='/home/album/:albumId' component={ShowAlbum} />
-      </Switch>
-
-      <Player />
+    <div id='main-home-container'>
+      <div id='side-menu'>
+        <div style={{ marginTop: '2rem', marginLeft: '1rem' }}>
+          <h2>Your Library..</h2>
+          <NavMenu />
+        </div>
+      </div>
+      <main>
+        <Switch>
+          <Route path='/home/favourite-albums' component={FavouriteAlbums} />
+          <Route path='/home/favourite-songs' component={FavouriteSongs} />
+          <Route path='/home/album/:albumId' component={ShowAlbum} />
+        </Switch>
+        <Player />
+      </main>
 
       {/* <SDKPlayer accessToken={this.state.accessToken} /> */}
 
       {/* <SDKPlayer accessToken={this.context[0].accessToken} /> */}
-    </main>
+    </div>
   );
 }
 

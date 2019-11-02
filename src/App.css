@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* color: white; */
 }
 
 h1 {
@@ -45,7 +46,7 @@ header {
 }
 
 #header-content {
-  color: white;
+  /* color: white; */
   position: absolute;
   top: 50%;
   left: 50%;
@@ -59,10 +60,50 @@ header {
   justify-content: center;
 }
 
+#main-home-container {
+  display: flex;
+  color: white;
+  /* justify-content: space-between;   */
+}
+
+#side-menu {
+  width: 15vw;
+  height: 100vh;
+  background-color: #1513169c;
+  margin-right: 1rem;
+  /* margin-top: 3rem; */
+}
+
+nav a {
+  display: block;
+  padding: 8px;
+  color: #1cc959;
+}
+
 .song-in-table:hover {
   color: green;
 }
 
 table {
   background-color: #1513169c;
+}
+
+th,
+td {
+  /* float: left; */
+  padding: 8px;
+}
+tr {
+  border-bottom: 5px solid rgb(118, 165, 42);
+}
+th {
+  text-align: left;
+}
+
+.album-header {
+  margin-top: 2rem;
+  display: flex;
+  width: 200px;
+  /* justify-content: space-between; */
+  align-items: center;
 }

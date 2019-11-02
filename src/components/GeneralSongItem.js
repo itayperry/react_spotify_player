@@ -9,6 +9,7 @@ const GeneralSongItem = props => {
       className='song-in-table'
       onClick={() => setPlayerSource(props.item.preview_url)}
     >
+      <td>{props.i + 1}</td>
       <td>{props.item.name}</td>
       <td>{props.item.duration_ms}</td>
     </tr>

@@ -30,7 +30,7 @@ const Player = () => {
   return (
     <div>
       <h3>Player Component</h3>
-      <p>{playerSource}</p>
+      {/* <p>{playerSource}</p> */}
       <audio controls ref={audioTagRef}>
         <source src={`${playerSource}`} type='audio/mpeg' />
       </audio>

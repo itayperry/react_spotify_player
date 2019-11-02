@@ -28,6 +28,7 @@ const FavouriteSongs = () => {
 
   return (
     <div>
+      <h2>Favourite Songs</h2>
       <table>
         <thead>
           <tr>

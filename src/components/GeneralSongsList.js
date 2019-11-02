@@ -7,13 +7,14 @@ const GeneralSongsList = props => {
     <table>
       <thead>
         <tr>
+          <th>#</th>
           <th>Name</th>
           <th>Length</th>
         </tr>
       </thead>
       <tbody>
         {props.songs.map((item, index) => (
-          <GeneralSongItem key={index} item={item} />
+          <GeneralSongItem key={index} item={item} i={index} />
         ))}
       </tbody>
       <tfoot>

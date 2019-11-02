@@ -11,22 +11,22 @@ function App() {
   return (
     <div className='App'>
       <header>
-        <div id='header-content'>
-          <AccessTokenProvider>
-            <BrowserRouter>
-              <Switch>
-                {/* {redirectHandler} */}
-                {/* <Redirect exact from='/' to='/login' />} */}
-                <Redirect exact from='/' to='/login' />}
-                <Route exact path='/login' component={Login} />
-                <Route exact path='/receive-token' component={ReceiveToken} />
-                <PlayerSourceProvider>
-                  <Route path='/home' component={Home} />
-                </PlayerSourceProvider>
-              </Switch>
-            </BrowserRouter>
-          </AccessTokenProvider>
-        </div>
+        {/* <div id='header-content'> */}
+        <AccessTokenProvider>
+          <BrowserRouter>
+            <Switch>
+              {/* {redirectHandler} */}
+              {/* <Redirect exact from='/' to='/login' />} */}
+              <Redirect exact from='/' to='/login' />}
+              <Route exact path='/login' component={Login} />
+              <Route exact path='/receive-token' component={ReceiveToken} />
+              <PlayerSourceProvider>
+                <Route path='/home' component={Home} />
+              </PlayerSourceProvider>
+            </Switch>
+          </BrowserRouter>
+        </AccessTokenProvider>
+        {/* </div> */}
       </header>
     </div>
   );

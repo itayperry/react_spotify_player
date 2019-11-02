@@ -31,17 +31,25 @@ const ShowAlbum = () => {
 
   return (
     <div>
-      <h2 id='albums'>{album.name}</h2>
-      {album.images && album.tracks && album.artists[0] ? (
+      {album.images && album.tracks && album.artists[0] && (
         <div>
-          <h3>{album.artists[0].name}</h3>
-          <h3>{album.release_date.substring(0, 4)}</h3>
-          <img src={album.images[2].url} alt='Album Cover' />
+          <div className='album-header'>
+            <section style={{ marginRight: '1rem' }}>
+              <img src={album.images[2].url} alt='Album Cover' />
+            </section>
+            <section style={{ marginTop: '-5px' }}>
+              <div>
+                <h3 id='albums'>{album.name}</h3>
+                <h4>{album.artists[0].name}</h4>
+                <h4>{album.release_date.substring(0, 4)}</h4>
+              </div>
+            </section>
+          </div>
           <GeneralSongsList songs={album.tracks.items} />
         </div>
-      ) : (
-        <p>Loading</p>
       )}
+      {/* // ) : ( // <p>Loading</p>
+      // )} */}
     </div>
   );
 };
