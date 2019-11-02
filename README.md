@@ -33,9 +33,9 @@ Considering the example above you should write:
 http://localhost:3001/spotify-callback?redirect=http://localhost:3000/receive-token
 ```
 
-![screenshot2](src/images/screenshot-spotify.png)
+![screenshot2](src/images/screenshot-spotify2.png)
 
-![screenshot3](src/images/screenshot-spotify3.png)
+![screenshot3](src/images/screenshot-spotify1.png)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
