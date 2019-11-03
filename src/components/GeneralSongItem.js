@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { PlayerSourceContext } from '../store/PlayerSourceContext';
+import { convertSongDuration } from '../utils/utils';
 
 const GeneralSongItem = props => {
   const setPlayerSource = useContext(PlayerSourceContext)[1];
@@ -11,7 +12,7 @@ const GeneralSongItem = props => {
     >
       <td>{props.i + 1}</td>
       <td>{props.item.name}</td>
-      <td>{props.item.duration_ms}</td>
+      <td>{convertSongDuration(props.item.duration_ms)}</td>
     </tr>
   );
 };

@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { PlayerSourceContext } from '../../store/PlayerSourceContext';
+import { convertSongDuration } from '../../utils/utils';
 
 const FavouriteSong = props => {
   const setPlayerSource = useContext(PlayerSourceContext)[1];
@@ -12,7 +13,7 @@ const FavouriteSong = props => {
       <td>{props.item.track.name}</td>
       <td>{props.item.track.album.name}</td>
       <td>{props.item.track.artists[0].name}</td>
-      <td>{props.item.track.duration_ms}</td>
+      <td>{convertSongDuration(props.item.track.duration_ms)}</td>
     </tr>
   );
 };

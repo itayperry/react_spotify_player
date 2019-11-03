@@ -9,7 +9,7 @@ const FavouriteSongs = () => {
   useEffect(() => {
     (async function() {
       const songsResponse = await fetch(
-        'https://api.spotify.com/v1/me/tracks?limit=15',
+        'https://api.spotify.com/v1/me/tracks?limit=13',
         {
           headers: {
             Authorization: `Bearer ${accessToken}`
@@ -35,7 +35,7 @@ const FavouriteSongs = () => {
             <th>Name</th>
             <th>Album</th>
             <th>Artist</th>
-            <th>Length</th>
+            <th>Duration</th>
           </tr>
         </thead>
         <tbody>
