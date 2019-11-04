@@ -84,6 +84,12 @@ nav a {
   color: green;
 }
 
+.table_container {
+  height: 450px;
+  overflow: auto;
+  margin-bottom: 1rem;
+}
+
 table {
   background-color: #1513169c;
 }
