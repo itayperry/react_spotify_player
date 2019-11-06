@@ -4,7 +4,7 @@ import { AccessTokenContext } from '../../store/AccessTokenContext';
 // import { saveState, createStateObj } from '../store/localStorage';
 
 function ReceiveToken(props) {
-  const setAccessToken = useContext(AccessTokenContext)[1];
+  const [, setAccessToken] = useContext(AccessTokenContext);
   // const [accessToken, setAccessToken] = useContext(PlayerSourceContext); will provide an unnecessary variable
 
   const params = new URLSearchParams(props.location.search.substring(1));

@@ -12,7 +12,6 @@ function Home() {
     <div id='main-home-container'>
       <div id='side-menu'>
         <div style={{ marginTop: '2rem', marginLeft: '1rem' }}>
-          <h2>Your Library..</h2>
           <NavMenu />
         </div>
       </div>

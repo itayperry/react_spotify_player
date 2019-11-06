@@ -12,9 +12,10 @@ const FavouriteSongs = () => {
 
   useEffect(() => {
     fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [accessToken]);
 
-  const fetchData = async () => {
+  async function fetchData() {
     const songsResponse = await fetch(nextPageUrl, {
       headers: {
         Authorization: `Bearer ${accessToken}`
@@ -28,8 +29,9 @@ const FavouriteSongs = () => {
     // You can't use set functions direcly - React will require them all to be dependencies
     updateNextPage(jsonResponse.next);
     updateNumOfSongs(jsonResponse.total);
-    updateSongs(jsonResponse.items);
-  };
+    // updateSongs(jsonResponse.items);
+    setSongs([...songs, ...jsonResponse.items]);
+  }
 
   const updateSongs = newSongs => {
     setSongs([...songs, ...newSongs]);

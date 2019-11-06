@@ -5,8 +5,7 @@ import GeneralSongsList from './GeneralSongsList';
 
 const ShowAlbum = () => {
   let { albumId } = useParams();
-  const [album, setAlbum] = useState({});
-  //   const [imageUrl, setImageUrl] = useState('');
+  const [album, setAlbum] = useState({ loading: true });
   const [accessToken] = useContext(AccessTokenContext);
 
   useEffect(() => {
@@ -25,13 +24,13 @@ const ShowAlbum = () => {
       }
       const jsonResponse = await albumResponse.json();
       setAlbum(jsonResponse);
-      // setImageUrl(jsonResponse.images[2].url);
     })();
   }, [albumId, accessToken]);
 
   return (
     <div>
-      {album.images && album.tracks && album.artists[0] && (
+      {/* {!album.loading */}
+      {!album.loading && (
         <div>
           <div className='album-header'>
             <section style={{ marginRight: '1rem' }}>
