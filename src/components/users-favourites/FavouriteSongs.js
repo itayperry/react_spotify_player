@@ -26,23 +26,10 @@ const FavouriteSongs = () => {
       throw new Error(`Spotify error: ${songsResponse.status}: ${text}`);
     }
     const jsonResponse = await songsResponse.json();
-    // You can't use set functions direcly - React will require them all to be dependencies
-    updateNextPage(jsonResponse.next);
-    updateNumOfSongs(jsonResponse.total);
-    // updateSongs(jsonResponse.items);
+    setNextPageUrl(jsonResponse.next);
+    setTotalNumOfSongs(jsonResponse.total);
     setSongs([...songs, ...jsonResponse.items]);
   }
-
-  const updateSongs = newSongs => {
-    setSongs([...songs, ...newSongs]);
-  };
-  const updateNextPage = url => {
-    setNextPageUrl(url);
-  };
-
-  const updateNumOfSongs = val => {
-    setTotalNumOfSongs(val);
-  };
 
   return (
     <div>

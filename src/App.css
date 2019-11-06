@@ -53,6 +53,14 @@ header {
   transform: translate(-50%, -50%);
 }
 
+main {
+  /* background-color: #d0cad342; */
+  width: 85vw;
+  overflow: scroll;
+  /* margin-left: 1rem; */
+  padding-left: 1.5rem;
+}
+
 #login-content {
   display: flex;
   flex-flow: column;
@@ -64,13 +72,15 @@ header {
   display: flex;
   color: white;
   /* justify-content: space-between;   */
+  position: relative;
 }
 
 #side-menu {
   width: 15vw;
   height: 100vh;
-  background-color: #1513169c;
-  margin-right: 1rem;
+  background-color: #151316e8;
+  /* margin-right: 1rem; */
+  border-right: 2px solid #ff000047;
   /* margin-top: 3rem; */
 }
 
@@ -84,6 +94,14 @@ nav a {
   color: green;
 }
 
+tr.song-in-table {
+  border-bottom: 1px solid rgba(91, 94, 88, 0.66);
+}
+
+table {
+  border-collapse: collapse;
+}
+
 .table_container {
   max-height: 450px;
   overflow: auto;
@@ -91,9 +109,9 @@ nav a {
   margin-top: 1rem;
 }
 
-table {
-  background-color: #1513169c;
-}
+/* table { */
+/* background-color: #1513169c; */
+/* } */
 
 th,
 td {
@@ -113,4 +131,19 @@ th {
   width: 200px;
   /* justify-content: space-between; */
   align-items: center;
+}
+
+.audio_container {
+  border-top: 2px solid #1cc959;
+  margin-top: 1rem;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  padding: 10px;
+  background-color: #f1f2f3;
+  text-align: center;
+}
+
+audio {
+  outline: none;
 }

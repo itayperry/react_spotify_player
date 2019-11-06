@@ -28,8 +28,7 @@ const Player = () => {
     }
   }, [playerSource]);
   return (
-    <div style={{ marginTop: '1rem' }}>
-      <h3 style={{ marginBottom: '1rem' }}>Player Component</h3>
+    <div className='audio_container'>
       <audio controls ref={audioTagRef}>
         <source src={`${playerSource}`} type='audio/mpeg' />
       </audio>

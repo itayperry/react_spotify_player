@@ -21,8 +21,8 @@ function Home() {
           <Route path='/home/favourite-songs' component={FavouriteSongs} />
           <Route path='/home/album/:albumId' component={ShowAlbum} />
         </Switch>
-        <Player />
       </main>
+      <Player />
 
       {/* <SDKPlayer accessToken={this.state.accessToken} /> */}
 

@@ -25,6 +25,21 @@ const NavMenu = () => {
   }, [accessToken]);
   return (
     <div>
+      <div style={{ display: 'flex' }}>
+        <img
+          src={require('../images/icon.png')}
+          width='40'
+          style={{ marginRight: '0.5rem' }}
+        />
+        <h2>Your Library</h2>
+      </div>
+      <nav>
+        <Link to='/home/favourite-songs'>Your Favourite Songs</Link>
+        <Link to='/home/favourite-albums'>Your Favourite Albums</Link>
+        {/* <Link to='/home/favourite-albums'>Artists Followed</Link> */}
+        {/* <Link to='/home/favourite-albums'>My Playlists</Link> */}
+        {/* <Link to='/home/favourite-albums'>Recently Played</Link> */}
+      </nav>
       {userInformation.images && (
         <img
           src={userInformation.images[0].url}
@@ -33,14 +48,6 @@ const NavMenu = () => {
         />
       )}
       <p>{userInformation.display_name}</p>
-      <h2>Your Library..</h2>
-      <nav>
-        <Link to='/home/favourite-songs'>Your Favourite Songs</Link>
-        <Link to='/home/favourite-albums'>Your Favourite Albums</Link>
-        {/* <Link to='/home/favourite-albums'>Artists Followed</Link> */}
-        {/* <Link to='/home/favourite-albums'>My Playlists</Link> */}
-        {/* <Link to='/home/favourite-albums'>Recently Played</Link> */}
-      </nav>
     </div>
   );
 };
