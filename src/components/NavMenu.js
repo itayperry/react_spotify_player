@@ -25,10 +25,20 @@ const NavMenu = () => {
   }, [accessToken]);
   return (
     <div>
+      <div id='user-info-container'>
+        {userInformation.images && (
+          <img
+            src={userInformation.images[0].url}
+            width='70'
+            style={{ borderRadius: '50%' }}
+          />
+        )}
+        <p>{userInformation.display_name}</p>
+      </div>
       <div style={{ display: 'flex' }}>
         <img
           src={require('../images/icon.png')}
-          width='40'
+          width='35'
           style={{ marginRight: '0.5rem' }}
         />
         <h2>Your Library</h2>
@@ -40,14 +50,6 @@ const NavMenu = () => {
         {/* <Link to='/home/favourite-albums'>My Playlists</Link> */}
         {/* <Link to='/home/favourite-albums'>Recently Played</Link> */}
       </nav>
-      {userInformation.images && (
-        <img
-          src={userInformation.images[0].url}
-          width='70'
-          style={{ borderRadius: '50%' }}
-        />
-      )}
-      <p>{userInformation.display_name}</p>
     </div>
   );
 };

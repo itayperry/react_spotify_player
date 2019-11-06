@@ -134,16 +134,24 @@ th {
 }
 
 .audio_container {
-  border-top: 2px solid #1cc959;
+  border-top: 2px solid #ff000047;
   margin-top: 1rem;
   position: absolute;
   width: 100%;
   bottom: 0;
   padding: 10px;
-  background-color: #f1f2f3;
+  background-color: #151316;
   text-align: center;
 }
 
 audio {
   outline: none;
+  width: 60%;
+}
+
+#user-info-container {
+  text-align: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.7rem;
+  border-bottom: 1px dotted darkseagreen;
 }
