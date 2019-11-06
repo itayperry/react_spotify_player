@@ -32,7 +32,7 @@ function FavouriteAlbums(props) {
   ));
 
   return (
-    <div>
+    <div style={{ paddingLeft: '1rem', paddingTop: '1rem' }}>
       <h2>Your favourite albums:</h2>
       <ul id='albums'>{elements}</ul>
     </div>
