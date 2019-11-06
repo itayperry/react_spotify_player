@@ -15,7 +15,7 @@ function Home() {
           <NavMenu />
         </div>
       </div>
-      <main>
+      <main id='style-9'>
         <Switch>
           <Route path='/home/favourite-albums' component={FavouriteAlbums} />
           <Route path='/home/favourite-songs' component={FavouriteSongs} />

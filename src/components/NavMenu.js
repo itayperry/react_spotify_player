@@ -35,7 +35,7 @@ const NavMenu = () => {
         )}
         <p>{userInformation.display_name}</p>
       </div>
-      <div style={{ display: 'flex' }}>
+      <div style={{ display: 'flex', marginBottom: '0.5rem' }}>
         <img
           src={require('../images/icon.png')}
           width='35'
