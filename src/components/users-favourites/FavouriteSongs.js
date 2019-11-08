@@ -11,7 +11,6 @@ const FavouriteSongs = () => {
   );
   const [totalNumOfSongs, setTotalNumOfSongs] = useState(0);
   // const [error, setError] = useState(null);
-  const [bool, setBool] = useState(true);
 
   useEffect(() => {
     fetchData();
@@ -32,6 +31,7 @@ const FavouriteSongs = () => {
       throw new Error(`Spotify error: ${songsResponse.status}: ${text}`);
     }
     const jsonResponse = await songsResponse.json();
+    console.log(jsonResponse.total);
     setNextPageUrl(jsonResponse.next);
     setTotalNumOfSongs(jsonResponse.total);
     setSongs([...songs, ...jsonResponse.items]);
@@ -39,25 +39,28 @@ const FavouriteSongs = () => {
 
   return (
     <InfiniteScroll
+      style={{ overflow: 'unset' }}
       dataLength={songs.length} // Don't ever use a static number here
       next={fetchData}
       hasMore={nextPageUrl}
       loader={<h4>Loading...</h4>}
       scrollableTarget='style-9'
-      endMessage={
-        <p
-          style={{
-            textAlign: 'center',
-            borderTop: '2px solid white',
-            marginBottom: '1rem'
-          }}
-        ></p>
-      }
+      // endMessage={
+      //   <p
+      //     style={{
+      //       textAlign: 'center',
+      //       borderTop: '1px solid white',
+      //       marginBottom: '1rem',
+      //       width: '80%'
+      //     }}
+      //   ></p>
+      // }
     >
       <div>
-        <h2 style={{ marginTop: '1rem', marginBottom: '1rem' }}>
-          Favourite Songs : {totalNumOfSongs}
-        </h2>
+        <div id='favourite-songs-headline-container'>
+          <h2 id='favourite-songs-headline'>Favourite Songs</h2>
+          {/* <span> {totalNumOfSongs} items</span> */}
+        </div>
         <div className='table_container'>
           <table>
             <thead>

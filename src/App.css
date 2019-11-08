@@ -89,12 +89,13 @@ header {
 
 main {
   /* background-color: #d0cad342; */
+  background-color: #151316ba;
   /* width: 85vw; */
   width: calc(100% - 230px);
   overflow-y: scroll;
   /* margin-left: 1rem; */
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  /* padding-left: 1.5rem; */
+  /* padding-right: 1.5rem; */
 }
 
 #login-content {
@@ -116,9 +117,9 @@ main {
   /* width: 15vw; */
   width: 230px;
   /* height: 100vh; */
-  background-color: #151316e8;
+  background-color: #151316ba;
   /* margin-right: 1rem; */
-  border-right: 2px solid #ff000047;
+  border-right: 2px solid #00ff8447;
   /* margin-top: 3rem; */
 }
 
@@ -137,14 +138,18 @@ nav a {
 } */
 
 table {
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
 }
 
 .table_container {
   /* max-height: 450px; */
-  overflow: auto;
+  /* overflow: auto; */
   margin-bottom: 1rem;
   margin-top: 1rem;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
 }
 
 /* table { */
@@ -155,6 +160,7 @@ th,
 td {
   /* float: left; */
   padding: 8px;
+  border-bottom: 1px solid #60555575;
 }
 tr {
   border-bottom: 2px solid rgba(91, 94, 88, 0.66);
@@ -201,4 +207,51 @@ audio {
   margin-bottom: 1rem;
   padding-bottom: 0.7rem;
   border-bottom: 1px dotted darkseagreen;
+}
+
+thead th {
+  position: sticky;
+  top: 0;
+}
+
+thead tr:first-child th {
+  position: sticky;
+  color: #605757;
+  top: 96px;
+  font-size: smaller;
+  background-color: #151316e8;
+  border-bottom: 1px solid #60555575;
+}
+/* 
+thead {
+  position: sticky;
+} */
+
+.infinite-scroll-component {
+  overflow: unset;
+}
+
+#favourite-songs-headline-container {
+  position: sticky;
+  background-color: #201e20;
+  top: 0;
+  padding-left: 1.5rem;
+}
+
+#favourite-songs-headline {
+  -webkit-text-fill-color: transparent;
+  /* margin-top: 1rem; */
+  background: linear-gradient(
+    150deg,
+    rgba(141, 53, 53, 0.72) 0%,
+    rgba(34, 121, 9, 0.5189426112241772) 50%,
+    rgba(30, 104, 129, 0.8) 100%
+  );
+  margin-bottom: 1rem;
+  background-clip: unset;
+  /* -webkit-background-clip: text; */
+  font-size: 60px;
+  background: -webkit-linear-gradient(#177cd9, #cf5151);
+  -webkit-background-clip: text;
+  padding-bottom: 1rem;
 }
