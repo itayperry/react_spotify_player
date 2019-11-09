@@ -126,7 +126,8 @@ main {
 nav a {
   display: block;
   padding: 8px;
-  color: #1cc959;
+  /* color: #1cc959; */
+  font-family: 'Raleway', sans-serif;
 }
 
 .song-in-table:hover {
@@ -217,7 +218,7 @@ thead th {
 thead tr:first-child th {
   position: sticky;
   color: #605757;
-  top: 96px;
+  top: 87.2px;
   font-size: smaller;
   background-color: #151316e8;
   border-bottom: 1px solid #60555575;
@@ -234,11 +235,15 @@ thead {
 #favourite-songs-headline-container {
   position: sticky;
   background-color: #201e20;
+  background-color: #1c1a1c;
   top: 0;
-  padding-left: 1.5rem;
+  /* padding-left: 1.5rem; */
+  padding: 0.5rem 0rem 0.5rem 1.5rem;
+  box-shadow: 1px 3px 14px 0px #ffffff;
 }
 
 #favourite-songs-headline {
+  font-family: 'Raleway', sans-serif;
   -webkit-text-fill-color: transparent;
   /* margin-top: 1rem; */
   background: linear-gradient(
@@ -247,11 +252,11 @@ thead {
     rgba(34, 121, 9, 0.5189426112241772) 50%,
     rgba(30, 104, 129, 0.8) 100%
   );
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
   background-clip: unset;
   /* -webkit-background-clip: text; */
   font-size: 60px;
-  background: -webkit-linear-gradient(#177cd9, #cf5151);
+  /* background: -webkit-linear-gradient(#177cd9, #cf5151); */
   -webkit-background-clip: text;
-  padding-bottom: 1rem;
+  /* padding-bottom: 1rem; */
 }

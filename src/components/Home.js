@@ -11,7 +11,7 @@ function Home() {
   return (
     <div id='main-home-container'>
       <div id='side-menu'>
-        <div style={{ margin: '2rem 1rem 2rem 1rem' }}>
+        <div style={{ height: '100%' }}>
           <NavMenu />
         </div>
       </div>
