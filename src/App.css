@@ -130,8 +130,12 @@ nav a {
   font-family: 'Raleway', sans-serif;
 }
 
+nav a:hover {
+  color: #1cc959;
+}
+
 .song-in-table:hover {
-  color: green;
+  color: #1cc959;
 }
 
 /* tr.song-in-table {
@@ -244,7 +248,7 @@ thead {
 
 #favourite-songs-headline {
   font-family: 'Raleway', sans-serif;
-  -webkit-text-fill-color: transparent;
+  /* -webkit-text-fill-color: transparent; */
   /* margin-top: 1rem; */
   background: linear-gradient(
     150deg,

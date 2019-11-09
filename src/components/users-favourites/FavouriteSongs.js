@@ -43,18 +43,19 @@ const FavouriteSongs = () => {
       dataLength={songs.length} // Don't ever use a static number here
       next={fetchData}
       hasMore={nextPageUrl}
-      loader={<h4>Loading...</h4>}
+      loader={<h4 style={{ marginLeft: '2rem' }}>Loading...</h4>}
       scrollableTarget='style-9'
-      // endMessage={
-      //   <p
-      //     style={{
-      //       textAlign: 'center',
-      //       borderTop: '1px solid white',
-      //       marginBottom: '1rem',
-      //       width: '80%'
-      //     }}
-      //   ></p>
-      // }
+      endMessage={
+        <div
+          style={{
+            textAlign: 'center',
+            borderTop: '1px solid white',
+            padding: '1rem',
+            marginRight: '1.5rem',
+            marginLeft: '1.5rem'
+          }}
+        ></div>
+      }
     >
       <div>
         <div id='favourite-songs-headline-container'>
