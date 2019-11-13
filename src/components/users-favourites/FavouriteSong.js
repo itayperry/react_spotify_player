@@ -8,11 +8,12 @@ const FavouriteSong = props => {
   return (
     <tr
       className='song-in-table'
-      onClick={() => setPlayerSource(props.item.track.preview_url)}
+      // onClick={() => setPlayerSource(props.item.track.preview_url)}
+      onClick={() => setPlayerSource(props.item.track)}
     >
       <td>{props.item.track.name}</td>
-      <td>{props.item.track.album.name}</td>
       <td>{props.item.track.artists[0].name}</td>
+      <td>{props.item.track.album.name}</td>
       <td>{convertSongDuration(props.item.track.duration_ms)}</td>
     </tr>
   );

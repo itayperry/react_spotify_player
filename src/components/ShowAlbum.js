@@ -44,7 +44,7 @@ const ShowAlbum = () => {
               </div>
             </section>
           </div>
-          <GeneralSongsList songs={album.tracks.items} />
+          <GeneralSongsList songs={album.tracks.items} images={album.images} />
         </div>
       )}
       {/* // ) : ( // <p>Loading</p>

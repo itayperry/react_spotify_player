@@ -5,7 +5,7 @@ import FavouriteAlbums from './users-favourites/FavouriteAlbums';
 import FavouriteSongs from './users-favourites/FavouriteSongs';
 import ShowAlbum from './ShowAlbum';
 import NavMenu from './NavMenu';
-import Player from './Player';
+import Player from './player/Player';
 
 function Home() {
   return (

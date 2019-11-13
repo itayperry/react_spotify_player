@@ -2,7 +2,7 @@ import React from 'react';
 import GeneralSongItem from './GeneralSongItem';
 
 const GeneralSongsList = props => {
-  console.log(props.songs);
+  console.log(props.images);
   return (
     <div className='table_container'>
       <table>
@@ -15,7 +15,12 @@ const GeneralSongsList = props => {
         </thead>
         <tbody>
           {props.songs.map((item, index) => (
-            <GeneralSongItem key={index} item={item} i={index} />
+            <GeneralSongItem
+              key={index}
+              item={item}
+              i={index}
+              images={props.images}
+            />
           ))}
         </tbody>
         <tfoot>

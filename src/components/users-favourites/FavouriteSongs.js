@@ -67,8 +67,8 @@ const FavouriteSongs = () => {
             <thead>
               <tr>
                 <th>Name</th>
-                <th>Album</th>
                 <th>Artist</th>
+                <th>Album</th>
                 <th>Duration</th>
               </tr>
             </thead>

@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useRef } from 'react';
-import { PlayerSourceContext } from '../store/PlayerSourceContext';
+import { PlayerSourceContext } from '../../store/PlayerSourceContext';
+import SongInfo from './SongInfo';
 
 const Player = () => {
   const [playerSource] = useContext(PlayerSourceContext);
@@ -29,9 +30,16 @@ const Player = () => {
   }, [playerSource]);
   return (
     <div className='audio_container'>
+      <SongInfo />
       <audio controls ref={audioTagRef}>
-        <source src={`${playerSource}`} type='audio/mpeg' />
+        <source src={`${playerSource.preview_url}`} type='audio/mpeg' />
       </audio>
+      <div style={{ width: '15rem', marginBottom: '0.3rem' }}>
+        <p style={{ color: '#8e8b87' }}>
+          Created with Spotify Web API
+          <i className='fab fa-spotify' style={{ marginLeft: '0.5rem' }}></i>
+        </p>
+      </div>
     </div>
   );
 };

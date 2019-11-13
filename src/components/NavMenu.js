@@ -1,10 +1,12 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { AccessTokenContext } from '../store/AccessTokenContext';
+import { PlayerSourceContext } from '../store/PlayerSourceContext';
 
 const NavMenu = () => {
   const [accessToken] = useContext(AccessTokenContext);
   const [userInformation, setUserInformation] = useState({});
+  const [playerSource] = useContext(PlayerSourceContext);
 
   useEffect(() => {
     // fetch(https://api.spotify.com/v1/me
@@ -23,6 +25,18 @@ const NavMenu = () => {
       setUserInformation(jsonResponse);
     })();
   }, [accessToken]);
+
+  const getImage = () => {
+    console.log('triggered');
+    if (playerSource.album) {
+      return String(playerSource.album.images[1].url);
+    } else if (playerSource.images) {
+      return String(playerSource.images[1].url);
+    } else {
+      return 'https://i.scdn.co/image/ab67616d00001e024ab1392de78e3608d433bac7';
+    }
+  };
+
   return (
     <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
       <section style={{ margin: '2rem 1rem', flexGrow: '1' }}>
@@ -54,11 +68,7 @@ const NavMenu = () => {
       </section>
       <section>
         <div style={{ height: '228px' }}>
-          <img
-            src='https://i.scdn.co/image/9f5fa5dfc5e084427eb4627a87bfafb2f200e3a4'
-            alt=''
-            width='100%'
-          />
+          <img src={getImage()} alt='' width='100%' />
         </div>
       </section>
     </div>
