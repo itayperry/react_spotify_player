@@ -8,8 +8,6 @@
 - Play 30 seconds samples of each song from your 'favourite songs list' or your 'favourite albums list'.
 - You can find this app on your own Spotify app list of **devices** and stream music to it, just look for _Broadcast to React Spotify Player_, this uses the Spotify's client-side JavaScript library: Web Playback SDK.
 
-**(Playlists length currently limited to 15)**
-
 ## Running the Sample Code
 
 Before getting started, you'll need to create a project on [Spotify's website](https://developer.spotify.com/dashboard/login).
@@ -33,7 +31,7 @@ Considering the example above you should write:
 http://localhost:3001/spotify-callback?redirect=http://localhost:3000/receive-token
 ```
 
-![screenshot2](src/images/screenshot-spotify07.png)
+![screenshot2](src/images/screenshot-spotify10.png)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
