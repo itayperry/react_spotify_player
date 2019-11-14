@@ -4,14 +4,18 @@ import { convertSongDuration } from '../../utils/utils';
 import ArtistsLinksBySong from '../ArtistsLinksBySong';
 const FavouriteSong = props => {
   const setPlayerSource = useContext(PlayerSourceContext)[1];
-  console.log(props.item.track);
+  // console.log(props.item.track);
   // const [playerSource, setPlayerSource] = useContext(PlayerSourceContext); will provide an unnecessary variable
 
   return (
     <tr
       className='song-in-table'
+      // className={props.active ? 'chosen_active_song' : ''}
       // onClick={() => setPlayerSource(props.item.track.preview_url)}
-      onClick={() => setPlayerSource(props.item.track)}
+      onClick={() => {
+        props.changeSelection(props.idx);
+        setPlayerSource(props.item.track);
+      }}
     >
       <td>{props.item.track.name}</td>
       {/* <td>{props.item.track.artists[0].name}</td> */}

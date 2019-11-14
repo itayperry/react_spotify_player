@@ -9,8 +9,12 @@ const FavouriteSongs = () => {
   const [nextPageUrl, setNextPageUrl] = useState(
     `https://api.spotify.com/v1/me/tracks?offset=0&limit=20`
   );
-  const [totalNumOfSongs, setTotalNumOfSongs] = useState(0);
-  // const [error, setError] = useState(null);
+  const [selectedSongIndex, setSelectedSongIndex] = useState(null);
+
+  const handleToggle = index => {
+    console.log('activated');
+    setSelectedSongIndex(index);
+  };
 
   useEffect(() => {
     fetchData();
@@ -33,7 +37,7 @@ const FavouriteSongs = () => {
     const jsonResponse = await songsResponse.json();
     console.log(jsonResponse.total);
     setNextPageUrl(jsonResponse.next);
-    setTotalNumOfSongs(jsonResponse.total);
+    // setTotalNumOfSongs(jsonResponse.total);
     setSongs([...songs, ...jsonResponse.items]);
   }
 
@@ -74,13 +78,19 @@ const FavouriteSongs = () => {
             </thead>
             <tbody>
               {songs.map((item, index) => (
-                <FavouriteSong key={index} item={item} />
+                <FavouriteSong
+                  key={index}
+                  item={item}
+                  changeSelection={handleToggle}
+                  active={index === selectedSongIndex}
+                  idx={index}
+                />
               ))}
             </tbody>
           </table>
         </div>
         {/* {nextPageUrl && (
-        <button onClick={fetchData}>Change Offset (add 10 songs)</button>
+          <button onClick={fetchData}>Change Offset (add 10 songs)</button>
       )} */}
         {/* button disappears when there are no more songs */}
       </div>
@@ -88,3 +98,6 @@ const FavouriteSongs = () => {
   );
 };
 export default FavouriteSongs;
+
+// const [totalNumOfSongs, setTotalNumOfSongs] = useState(0);
+// const [error, setError] = useState(null);
