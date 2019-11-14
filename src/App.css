@@ -120,6 +120,7 @@ main {
   background-color: #151316ba;
   /* margin-right: 1rem; */
   border-right: 2px solid #00ff8447;
+  border-right: 2px solid #d8e6df54;
   /* margin-top: 3rem; */
 }
 
@@ -135,7 +136,8 @@ nav a:hover {
 }
 
 .song-in-table:hover {
-  color: #1cc959;
+  /* color: #1cc959; */
+  background-color: #362d2ca3;
 }
 
 /* tr.song-in-table {
@@ -180,9 +182,10 @@ th {
 .album-header {
   margin-top: 2rem;
   display: flex;
-  width: 200px;
+  /* width: 200px; */
   /* justify-content: space-between; */
   align-items: center;
+  padding: 0rem 1.5rem;
 }
 
 .audio_container {

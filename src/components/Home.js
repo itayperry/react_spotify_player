@@ -4,7 +4,7 @@ import { Switch, Route } from 'react-router-dom';
 import FavouriteAlbums from './users-favourites/FavouriteAlbums';
 import FavouriteSongs from './users-favourites/FavouriteSongs';
 import ShowAlbum from './ShowAlbum';
-import NavMenu from './NavMenu';
+import SideMenuContainer from './side-menu/SideMenuContainer';
 import Player from './player/Player';
 
 function Home() {
@@ -12,7 +12,7 @@ function Home() {
     <div id='main-home-container'>
       <div id='side-menu'>
         <div style={{ height: '100%' }}>
-          <NavMenu />
+          <SideMenuContainer />
         </div>
       </div>
       <main id='style-9'>
