@@ -139,9 +139,9 @@ nav a:hover {
   background-color: #362d2ca3;
 }
 
-/* .chosen_active_song {
+.chosen_active_song {
   color: #1cc959;
-} */
+}
 
 /* tr.song-in-table {
   border-bottom: 1px solid rgba(91, 94, 88, 0.66);
