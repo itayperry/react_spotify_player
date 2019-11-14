@@ -6,9 +6,7 @@ const ArtistsLinksBySong = props => {
       {props.artistArrOfObj.map((item, index) => (
         <Fragment>
           {index !== 0 && <span>, </span>}
-          <span key={item.id} href='javascript: void(0)'>
-            {item.name}
-          </span>
+          <span key={item.id}>{item.name}</span>
           {/* <a key={item.id} href='javascript: void(0)'>
             {item.name}
           </a> */}

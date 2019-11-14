@@ -5,7 +5,7 @@ import FavouriteAlbums from './users-favourites/FavouriteAlbums';
 import FavouriteSongs from './users-favourites/FavouriteSongs';
 import ShowAlbum from './ShowAlbum';
 import SideMenuContainer from './side-menu/SideMenuContainer';
-import Player from './player/Player';
+import PlayerContainer from './player/PlayerContainer';
 
 function Home() {
   return (
@@ -22,7 +22,7 @@ function Home() {
           <Route path='/home/album/:albumId' component={ShowAlbum} />
         </Switch>
       </main>
-      <Player />
+      <PlayerContainer />
 
       {/* <SDKPlayer accessToken={this.state.accessToken} /> */}
 
