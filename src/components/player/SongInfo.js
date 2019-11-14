@@ -1,4 +1,5 @@
-import React, { useContext } from 'react';
+import React, { useContext, Fragment } from 'react';
+import ArtistsLinksBySong from '../ArtistsLinksBySong';
 import { PlayerSourceContext } from '../../store/PlayerSourceContext';
 
 export default () => {
@@ -9,7 +10,7 @@ export default () => {
   };
   const getSongArtists = () => {
     if (playerSource.artists) {
-      return String(playerSource.artists[0].name);
+      return <ArtistsLinksBySong artistArrOfObj={playerSource.artists} />;
     } else {
       return 'Artist Name';
     }
