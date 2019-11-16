@@ -151,6 +151,7 @@ table {
   border-collapse: separate;
   border-spacing: 0;
   width: 100%;
+  table-layout: fixed;
 }
 
 .table_container {
@@ -180,6 +181,12 @@ tr {
 th {
   border-bottom: 3px solid #63c006a8;
   text-align: left;
+}
+
+td {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .album-header {
