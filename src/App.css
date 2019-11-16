@@ -322,7 +322,7 @@ Player
   font-family: 'Raleway', sans-serif;
 }
 .active_animation {
-  animation: 10s slide-left linear infinite;
+  animation: 14s slide-left linear infinite;
 }
 #move-control,
 #move-control2 {
@@ -334,7 +334,7 @@ Player
 }
 div#player-song-text-container {
   /* background-color: #8d3535b8; */
-  width: 15rem;
+  width: var(--width-of-song-info);
   /* margin: 2.5em auto; */
   /*   padding: 0rem 1rem; */
   position: relative;

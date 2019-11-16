@@ -1,13 +1,25 @@
-import React, { useContext, Fragment } from 'react';
+import React, { useContext, useRef, useEffect, useState } from 'react';
 import ArtistsLinksBySong from '../ArtistsLinksBySong';
 import { PlayerSourceContext } from '../../store/PlayerSourceContext';
 
 export default () => {
   const [playerSource] = useContext(PlayerSourceContext);
+  const containerTagRef = useRef(null);
+  const songTitleTag = useRef(null);
+  const artistNamesTag = useRef(null);
+  const [isOverflowingTitle, setIsOverflowingTitle] = useState(false);
+  const [isOverflowingNames, setIsOverflowingNames] = useState(false);
 
-  const isOverflowning = (container, child) => {
-    return false;
-  };
+  useEffect(() => {
+    artistNamesTag.current.clientWidth > 224
+      ? setIsOverflowingNames(true)
+      : setIsOverflowingNames(false);
+
+    songTitleTag.current.clientWidth > 224
+      ? setIsOverflowingTitle(true)
+      : setIsOverflowingTitle(false);
+  }, [playerSource]);
+
   const getSongArtists = () => {
     if (playerSource.artists) {
       return <ArtistsLinksBySong artistArrOfObj={playerSource.artists} />;
@@ -24,16 +36,17 @@ export default () => {
   };
 
   return (
-    <div id='player-song-text-container'>
+    <div id='player-song-text-container' ref={containerTagRef}>
       <div id='title-name-text'>
         <div id='move-control'>
           <div
             id='move1'
-            className={isOverflowning() ? 'active_animation' : ''}
+            ref={songTitleTag}
+            className={isOverflowingTitle ? 'active_animation' : ''}
           >
             {getSongTitle()}
           </div>
-          {isOverflowning() && (
+          {isOverflowingTitle && (
             <div className='adjacent-copy'>{getSongTitle()}</div>
           )}
         </div>
@@ -42,11 +55,12 @@ export default () => {
         <div id='move-control2'>
           <div
             id='move2'
-            className={isOverflowning() ? 'active_animation' : ''}
+            ref={artistNamesTag}
+            className={isOverflowingNames ? 'active_animation' : ''}
           >
             {getSongArtists()}
           </div>
-          {isOverflowning() && (
+          {isOverflowingNames && (
             <div className='adjacent-copy'>{getSongArtists()}</div>
           )}
         </div>
