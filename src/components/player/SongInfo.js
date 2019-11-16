@@ -11,11 +11,12 @@ export default () => {
   const [isOverflowingNames, setIsOverflowingNames] = useState(false);
 
   useEffect(() => {
-    artistNamesTag.current.clientWidth > 224
+    let mainPixelWidth = containerTagRef.current.clientWidth;
+    artistNamesTag.current.clientWidth > mainPixelWidth - 16
       ? setIsOverflowingNames(true)
       : setIsOverflowingNames(false);
 
-    songTitleTag.current.clientWidth > 224
+    songTitleTag.current.clientWidth > mainPixelWidth - 16
       ? setIsOverflowingTitle(true)
       : setIsOverflowingTitle(false);
   }, [playerSource]);

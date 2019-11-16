@@ -322,7 +322,7 @@ Player
   font-family: 'Raleway', sans-serif;
 }
 .active_animation {
-  animation: 14s slide-left linear infinite;
+  animation: 16s slide-left linear infinite;
 }
 #move-control,
 #move-control2 {
