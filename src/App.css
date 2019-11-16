@@ -351,7 +351,7 @@ div#player-song-text-container {
 }
 
 @keyframes slide-left {
-  30% {
+  25% {
     margin-left: 0%;
     /*     transform:translateX(0); */
   }

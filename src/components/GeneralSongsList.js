@@ -9,8 +9,8 @@ const GeneralSongsList = props => {
         <thead>
           <tr>
             <th>#</th>
-            <th>Name</th>
-            <th>Duration</th>
+            <th width='85%'>Name</th>
+            <th width='10%'>Duration</th>
           </tr>
         </thead>
         <tbody>
