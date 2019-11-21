@@ -12,13 +12,20 @@ export default () => {
 
   useEffect(() => {
     let mainPixelWidth = containerTagRef.current.clientWidth;
-    artistNamesTag.current.clientWidth > mainPixelWidth - 16
-      ? setIsOverflowingNames(true)
-      : setIsOverflowingNames(false);
+    setTimeout(() => {
+      artistNamesTag.current.clientWidth > mainPixelWidth - 16
+        ? setIsOverflowingNames(true)
+        : setIsOverflowingNames(false);
 
-    songTitleTag.current.clientWidth > mainPixelWidth - 16
-      ? setIsOverflowingTitle(true)
-      : setIsOverflowingTitle(false);
+      songTitleTag.current.clientWidth > mainPixelWidth - 16
+        ? setIsOverflowingTitle(true)
+        : setIsOverflowingTitle(false);
+    }, 0);
+
+    return () => {
+      setIsOverflowingNames(false); // reset this animation
+      setIsOverflowingTitle(false); // reset this animation
+    };
   }, [playerSource]);
 
   const getSongArtists = () => {

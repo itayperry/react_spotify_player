@@ -6,7 +6,7 @@ export const PlayerSourceProvider = props => {
   const [playerSource, setPlayerSource] = useState({});
 
   console.log('playerSource inside this context is ' + playerSource);
-  console.log(playerSource);
+  console.log(playerSource.id);
 
   return (
     <PlayerSourceContext.Provider value={[playerSource, setPlayerSource]}>

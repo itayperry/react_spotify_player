@@ -79,7 +79,8 @@ const FavouriteSongs = () => {
             <tbody>
               {songs.map((item, index) => (
                 <FavouriteSong
-                  key={index}
+                  // key={index}
+                  key={item.id}
                   item={item}
                   changeSelection={handleToggle}
                   active={index === selectedSongIndex}
@@ -101,3 +102,13 @@ export default FavouriteSongs;
 
 // const [totalNumOfSongs, setTotalNumOfSongs] = useState(0);
 // const [error, setError] = useState(null);
+
+// {songs.map((item, index) => (
+//   <FavouriteSong
+//     key={index}
+//     key={item.id}
+//     item={item}
+//     changeSelection={handleToggle}
+//     active={index === selectedSongIndex}
+//     idx={index}
+//   />
