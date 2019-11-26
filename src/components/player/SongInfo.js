@@ -13,18 +13,14 @@ export default () => {
   useEffect(() => {
     let mainPixelWidth = containerTagRef.current.clientWidth;
     setTimeout(() => {
-      artistNamesTag.current.clientWidth > mainPixelWidth - 16
-        ? setIsOverflowingNames(true)
-        : setIsOverflowingNames(false);
+      if (artistNamesTag.current.clientWidth > mainPixelWidth - 16)
+        setIsOverflowingNames(true);
 
-      songTitleTag.current.clientWidth > mainPixelWidth - 16
-        ? setIsOverflowingTitle(true)
-        : setIsOverflowingTitle(false);
+      if (songTitleTag.current.clientWidth > mainPixelWidth - 16)
+        setIsOverflowingTitle(true);
     }, 0);
-
     return () => {
-      setIsOverflowingNames(false); // reset this animation
-      setIsOverflowingTitle(false); // reset this animation
+      resetAnimations();
     };
   }, [playerSource]);
 
@@ -41,6 +37,11 @@ export default () => {
     } else {
       return 'Track Title';
     }
+  };
+
+  const resetAnimations = () => {
+    setIsOverflowingNames(false); // reset the artist animation
+    setIsOverflowingTitle(false); // reset the title animation
   };
 
   return (

@@ -86,28 +86,3 @@ const FavouriteSongs = () => {
   );
 };
 export default FavouriteSongs;
-
-// const [totalNumOfSongs, setTotalNumOfSongs] = useState(0);
-// const [error, setError] = useState(null);
-
-// const [selectedSongId, setSelectedSongId] = useState('');
-
-// const handleToggle = id => {
-//   console.log('activated');
-//   setSelectedSongId(id);
-// };
-
-// {songs.map((item, index) => (
-//   <FavouriteSong
-//     key={index}
-//     key={item.id}
-//     item={item}
-//     changeSelection={handleToggle}
-//     active={index === selectedSongId}
-//     idx={index}
-//   />
-
-// {/* {nextPageUrl && (
-//   <button onClick={fetchData}>Change Offset (add 10 songs)</button>
-// )} */}
-// {/* button disappears when there are no more songs */}
