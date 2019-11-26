@@ -13,7 +13,7 @@ const GeneralSongItem = props => {
   };
   return (
     <tr
-      className='song-in-table'
+      className={'song-in-table ' + (props.active ? 'chosen_active_song' : '')}
       onClick={() => setPlayerInfo()}
       // onClick={() => setPlayerSource([...props.item, ...props.images])}
       // onClick={() => setPlayerSource([...props.item, ...props.images])}

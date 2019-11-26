@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import GeneralSongItem from './GeneralSongItem';
+import { PlayerSourceContext } from '../store/PlayerSourceContext';
 
 const GeneralSongsList = props => {
+  const [playerSource] = useContext(PlayerSourceContext);
   console.log(props.images);
   return (
     <div className='table_container'>
@@ -16,9 +18,10 @@ const GeneralSongsList = props => {
         <tbody>
           {props.songs.map((item, index) => (
             <GeneralSongItem
-              key={index}
+              key={item.id}
               item={item}
               i={index}
+              active={item.id === playerSource.id}
               images={props.images}
             />
           ))}

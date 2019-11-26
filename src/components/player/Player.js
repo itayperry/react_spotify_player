@@ -10,9 +10,11 @@ const Player = () => {
     /*
         audioTagRef.current.play(); - this will throw an error: "Uncaught (in promise) DOMException"
         read this article: 'Autoplay Policy Changes' in Google Developers :)
+
         (async function() {
         const play = await audioTagRef.current.play();
         })(); also doesn't work.
+        
         You should always look at the Promise returned by the play function to see if it was rejected:
     */
     var promise = audioTagRef.current.play();
