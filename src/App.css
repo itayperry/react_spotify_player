@@ -37,7 +37,7 @@ button:hover {
   background-color: #1cc959;
 }
 
-header {
+#header {
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
     url('images/background-music.jpg');
   background-size: cover;

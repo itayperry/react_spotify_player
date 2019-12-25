@@ -10,8 +10,7 @@ import { PlayerSourceProvider } from './store/PlayerSourceContext';
 function App() {
   return (
     <div className='App'>
-      <header>
-        {/* <div id='header-content'> */}
+      <div id='header'>
         <AccessTokenProvider>
           <BrowserRouter>
             <Switch>
@@ -26,8 +25,7 @@ function App() {
             </Switch>
           </BrowserRouter>
         </AccessTokenProvider>
-        {/* </div> */}
-      </header>
+      </div>
     </div>
   );
 }
